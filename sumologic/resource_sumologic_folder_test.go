@@ -12,7 +12,7 @@ import (
 func TestAccFolder(t *testing.T) {
 	var folder Folder
 	resource.Test(t, resource.TestCase{
-		PreCheck: func() {testAccPreCheck(t)},
+		PreCheck:     func() { testAccPreCheck(t) },
 		Providers:    testAccProviders,
 		CheckDestroy: testAccCheckFolderDestroy(folder),
 		Steps: []resource.TestStep{
@@ -88,7 +88,7 @@ func testAccCheckFolderDestroy(folder Folder) resource.TestCheckFunc {
 
 func testAccPreCheck(t *testing.T) {
 	if strings.Contains(TestAccSumologicFolder, "PERSONAL_FOLDER_HEX_ID") ||
-	strings.Contains(TestAccSumologicFolderUpdate, "PERSONAL_FOLDER_HEX_ID") {
+		strings.Contains(TestAccSumologicFolderUpdate, "PERSONAL_FOLDER_HEX_ID") {
 		t.Fatal("The parent_id must be set for the TestAccSumologicFolder and" +
 			" TestAccSumologicFolderUpdate variables")
 	}

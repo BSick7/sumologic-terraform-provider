@@ -10,7 +10,7 @@ import (
 
 func dataSourceSumologicCollector() *schema.Resource {
 	return &schema.Resource{
-		Read:   dataSourceSumologicCollectorRead,
+		Read: dataSourceSumologicCollectorRead,
 
 		Schema: map[string]*schema.Schema{
 			"id": {
@@ -74,4 +74,3 @@ func dataSourceSumologicCollectorRead(d *schema.ResourceData, meta interface{}) 
 	log.Printf("[DEBUG] data_source_sumologic_collector: retrieved %v", collector)
 	return nil
 }
-
